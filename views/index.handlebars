@@ -1,33 +1,177 @@
-<div id="home">
+<div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+    <div class="hero-image">
+      <div class="hero-text text-center">
+
+        {{!-- Flipped "R" IN PixR --}}
+        <h1>P <span class="flip">R</span> I X</h1>
+
+        <a href="#stop">
+          <h3 class="btn" style="border:1px solid white; background-color: transparent;">LEARN
+            MORE
+          </h3>
+        </a>
+        <a href="/role" class="btn" id="start" style="border:1px solid white; background-color: transparent;">Get
+          Started</a>
       </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<div id="stop" style="color: white; visibility:hidden;">Stop here</div>
+
+<div id="features" class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 style="color:black; text-align:center; font-size:25px;">
+        CLICK EACH PHOTO TO LEARN MORE
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="scene">
+  <label class="card-wrap">
+    <input type="checkbox" class="flipcard">
+    <div class="cardA">
+      <div class="front card-face">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.Tl602cPZbCrqkOAJJjOn3wHaEK&pid=Api&P=0&w=303&h=171" 
+        alt="" class="card-photo">
+      </div>
+      <div class="back card-face">
+        <p id="top-text" style="color:white;">top</p>
+        <h4>Are you a Photographer</h4>
+        <h4>Want to share your talent?</h4>
+        <h4>Yes? Let's get started!</h4>
+      </div>
+    </div>
+  </label>
+  <label class="card-wrap">
+    <input type="checkbox" class="flipcard">
+    <div class="cardA">
+      <div class="front card-face">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.o-PAWcynKNerewg8e-M57gHaDi&pid=Api&P=0&w=331&h=159"
+          alt="" class="card-photo">
+      </div>
+      <div class="back card-face">
+        <p id="top-text" style="color:white;">top</p>
+        <h4>Are you a Blogger?</h4>
+        <h4>Looking for inspiration?</h4>
+        <h4>Yes? Let's get started!</h4>
+      </div>
+    </div>
+  </label>
+  <label class="card-wrap">
+    <input type="checkbox" class="flipcard">
+    <div class="cardA">
+      <div class="front card-face">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.Wxak8PRRyhqWLapxGLai1AHaE-&pid=Api&P=0&w=267&h=180"
+          alt="" class="card-photo">
+      </div>
+      <div class="back card-face">
+        <p id="top-text" style="color:white;">top</p>
+        <h4>Just want to explore images?</h4>
+        <h4>Looking to P<span class="flip">R</span>IX to impress?</h4>
+        <h4>Yes? Then...Let's get started!</h4>
+      </div>
+    </div>
+  </label>
+</div>
+
+<div id="features" class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 id="perks-title" style="color:black; text-align:center;">
+        The Good Stuff
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div id="perks-section" class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <img
+        src="https://images.search.yahoo.com/images/view;_ylt=AwrExlQ3pThesloAyi02nIlQ;_ylu=X3oDMTIyNGxpajU1BHNlYwNzcgRzbGsDaW1nBG9pZAMxOTE0ODEwZDNlMzVhMWUzYzExZDdhNjBmOGMwNzY1NwRncG9zAzIEaXQDYmluZw--?back=https%3A%2F%2Fimages.search.yahoo.com%2Fyhs%2Fsearch%3Fp%3Dimage%2Bicon%26n%3D60%26ei%3DUTF-8%26type%3Dco_appfocus1_cr%26fr%3Dyhs-pty-pty_converter%26fr2%3Dsb-top-images.search%26hsimp%3Dyhs-pty_converter%26hspart%3Dpty%26param1%3D20190930%26param2%3Decf36e47-700a-465e-865c-3bbb618a7a03%26param3%3Dconverter_%257EUS%257Eappfocus1%257E%26param4%3Dd-ccc3-lp0-dsf_converter-cp_6461634458-bb8%257EChrome%257Eimages%257E426A99E46A52843E6A795576225C2FFD%26tab%3Dorganic%26ri%3D2&w=960&h=981&imgurl=cdn.onlinewebfonts.com%2Fsvg%2Fimg_299591.png&rurl=https%3A%2F%2Fwww.onlinewebfonts.com%2Ficon%2F299591&size=47.3KB&name=Album+Svg+Png+Icon+Free+Download+%28%23299591+...&p=image+icon&oid=1914810d3e35a1e3c11d7a60f8c07657&fr2=sb-top-images.search&fr=yhs-pty-pty_converter&tt=Album+Svg+Png+Icon+Free+Download+%28%23299591+...&b=0&ni=108&no=2&ts=&tab=organic&sigr=11avhrp7j&sigb=1c9dgm1be&sigi=1193d3if9&sigt=11dthpnm5&sign=11dthpnm5&.crumb=BVauc8DZdcf&fr=yhs-pty-pty_converter&fr2=sb-top-images.search&hsimp=yhs-pty_converter&hspart=pty&type=co_appfocus1_cr&param1=20190930&param2=ecf36e47-700a-465e-865c-3bbb618a7a03&param3=converter_%7EUS%7Eappfocus1%7E&param4=d-ccc3-lp0-dsf_converter-cp_6461634458-bb8%7EChrome%7Eimages%7E426A99E46A52843E6A795576225C2FFD"
+        alt="images-icon" class="icons">
+      <h5 style="color:black; text-align:center;">
+        free images from all over the world
+      </h5>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="https://images.search.yahoo.com/images/view;_ylt=AwrEzNxopThefwgAs_w2nIlQ;_ylu=X3oDMTIzNjVxNWk1BHNlYwNzcgRzbGsDaW1nBG9pZAMzOWE3OWEyNjBjNGVlZWY0ZDg0MmVhYzdlYWM2NzVhOQRncG9zAzQ5BGl0A2Jpbmc-?back=https%3A%2F%2Fimages.search.yahoo.com%2Fyhs%2Fsearch%3Fp%3Dfree%2Bicon%26n%3D60%26ei%3DUTF-8%26type%3Dco_appfocus1_cr%26fr%3Dyhs-pty-pty_converter%26fr2%3Dsa-gp-images.search%26hsimp%3Dyhs-pty_converter%26hspart%3Dpty%26param1%3D20190930%26param2%3Decf36e47-700a-465e-865c-3bbb618a7a03%26param3%3Dconverter_%257EUS%257Eappfocus1%257E%26param4%3Dd-ccc3-lp0-dsf_converter-cp_6461634458-bb8%257EChrome%257Eimages%257E426A99E46A52843E6A795576225C2FFD%26tab%3Dorganic%26ri%3D49&w=256&h=256&imgurl=files.softicons.com%2Fdownload%2Fbusiness-icons%2Ffree-e-commerce-icons-by-design-bolts%2Fpng%2F256x256%2FFree-Badge-Icon.png&rurl=http%3A%2F%2Fwww.softicons.com%2Fbusiness-icons%2Ffree-e-commerce-icons-by-design-bolts%2Ffree-badge-icon&size=+6.6KB&name=Free+Badge+Icon+-+Free+E-Commerce+Icons+-+SoftIcons.com&p=free+icon&oid=39a79a260c4eeef4d842eac7eac675a9&fr2=sa-gp-images.search&fr=yhs-pty-pty_converter&tt=Free+Badge+Icon+-+Free+E-Commerce+Icons+-+SoftIcons.com&b=0&ni=108&no=49&ts=&tab=organic&sigr=12tp9ppdl&sigb=1c8g6kq9v&sigi=13h3ppkav&sigt=11nf85jfe&sign=11nf85jfe&.crumb=BVauc8DZdcf&fr=yhs-pty-pty_converter&fr2=sa-gp-images.search&hsimp=yhs-pty_converter&hspart=pty&type=co_appfocus1_cr&param1=20190930&param2=ecf36e47-700a-465e-865c-3bbb618a7a03&param3=converter_%7EUS%7Eappfocus1%7E&param4=d-ccc3-lp0-dsf_converter-cp_6461634458-bb8%7EChrome%7Eimages%7E426A99E46A52843E6A795576225C2FFD"
+        alt="free-icon" class="icons">
+      <h5 style="color:black; text-align:center;">
+        free platform for photographers, bloggers, and everyone to share their talent 
+      </h5>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="https://images.search.yahoo.com/images/view;_ylt=AwrExdykpTheZQ0A2xU2nIlQ;_ylu=X3oDMTIyMHEybTljBHNlYwNzcgRzbGsDaW1nBG9pZAM4NDQ4MTVkNjVkMmU1Y2M4OTIxNzMyMThjNDk0M2M2MARncG9zAzMEaXQDYmluZw--?back=https%3A%2F%2Fimages.search.yahoo.com%2Fyhs%2Fsearch%3Fp%3Deverything%2Bicon%26n%3D60%26ei%3DUTF-8%26type%3Dco_appfocus1_cr%26fr%3Dyhs-pty-pty_converter%26fr2%3Dsb-top-images.search%26hsimp%3Dyhs-pty_converter%26hspart%3Dpty%26param1%3D20190930%26param2%3Decf36e47-700a-465e-865c-3bbb618a7a03%26param3%3Dconverter_%257EUS%257Eappfocus1%257E%26param4%3Dd-ccc3-lp0-dsf_converter-cp_6461634458-bb8%257EChrome%257Eimages%257E426A99E46A52843E6A795576225C2FFD%26tab%3Dorganic%26ri%3D3&w=512&h=512&imgurl=cdn2.iconfinder.com%2Fdata%2Ficons%2Feverything-but-the-kitchen-sink-2%2F100%2Fcommon-38-512.png&rurl=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F1539474%2Fenlarge_inspect_locate_magnifying_glass_search_search_bar_zoom_in_icon&size=19.2KB&name=Enlarge%2C+inspect%2C+locate%2C+magnifying+glass%2C+search%2C+search+...&p=everything+icon&oid=844815d65d2e5cc892173218c4943c60&fr2=sb-top-images.search&fr=yhs-pty-pty_converter&tt=Enlarge%2C+inspect%2C+locate%2C+magnifying+glass%2C+search%2C+search+...&b=0&ni=108&no=3&ts=&tab=organic&sigr=13f7jeu0r&sigb=1celpv5vj&sigi=12m03p018&sigt=11uii48e9&sign=11uii48e9&.crumb=BVauc8DZdcf&fr=yhs-pty-pty_converter&fr2=sb-top-images.search&hsimp=yhs-pty_converter&hspart=pty&type=co_appfocus1_cr&param1=20190930&param2=ecf36e47-700a-465e-865c-3bbb618a7a03&param3=converter_%7EUS%7Eappfocus1%7E&param4=d-ccc3-lp0-dsf_converter-cp_6461634458-bb8%7EChrome%7Eimages%7E426A99E46A52843E6A795576225C2FFD"
+        alt="search-icon" class="icons">
+      <h5 style="color:black; text-align:center;">
+        we provide the images
+      </h5>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $("a[href^='#']").on('click', function (e) {
+    // prevent default anchor click 
+    e.preventDefault();
+  
+    var hash = this.hash;
+ 
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 1000, function () {
+     
+      // (default click)
+      window.location.hash = hash;
+    });
+  });
+</script>
+
+{{!-- footer --}}
+<footer>
+  <div class="footer-top">
+    <div class="container text-center">
+      <ul class="menu">
+
+        <li>
+          <a href="/">P <span class="flip">R</span> I X</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  <div class="container" style="border-top:1px solid grey;">
+    <div class="row text-center">
+      <div class="col-lg-12">
+        <ul class="menu">
+
+          <li>
+            <a href="/">Top </a>
+          </li>
+
+          <li>
+            <a href="/about">AboutUs</a>
+          </li>
+
+          <li>
+            {{!-- <a href="project link">Project-GitHub</a> --}}
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script> --}}
