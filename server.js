@@ -1,8 +1,12 @@
-// require("dotenv").config();
+// var env = require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+var passport = require("passport");
+var session = require("express-session");
 var db = require("./models");
+// var env = require("dotenv")
+//   .load()
+//   .config();
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -11,6 +15,13 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+// For Passport
+
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 // Handlebars
 app.engine(
@@ -21,11 +32,28 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+//Models
+var models = require("./models");
+
+//Sync Database
+models.sequelize
+  .sync()
+  .then(function() {
+    console.log("Nice data, bro!");
+  })
+  .catch(function(err) {
+    console.log(err, "Dang. It broke.");
+  });
+
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
+
+app.get("/", function(req, res) {
+  res.send("Welcome to Passport with Sequelize");
+});
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
