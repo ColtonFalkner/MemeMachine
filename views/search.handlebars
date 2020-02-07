@@ -1,0 +1,178 @@
+<div class="hero-image">
+
+  {{!-- Navbar --}}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
+    <a class="navbar-brand" href="/">PIX<span class="flip">R</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/role">Home</a>
+        </li>
+        <li class="nav-item hide-desktop">
+          <a class="nav-link" href="/{{user.id}}/images">My Images</a>
+        </li>
+        <li class="nav-item hide-desktop">
+          <a class="nav-link" href="/auth/logout">Logout</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{user.gname}}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/{{user.id}}/images">My Images</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/auth/logout">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="hero-text">
+ 
+  <h1 class="subtext">DAILY IMAGES</h1>
+
+  <a href="#form">
+    <h3 class="mt-3 text-white btn btn-dark">GET STARTED</h3>
+  </a>
+</div>
+
+{{!-- The Start of the Form Container --}}
+<div class="container mb-5" id="form">
+ <form>
+  <div class="form-group my-3">
+    <label for="exampleFormControlFile1">Upload Image</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>
+</div>
+
+<div class="form-group my-3">
+      <label for="Search">Search Images</label>
+      <input class="form-control" type="text" placeholder="Default input">
+    </div>
+
+
+    <button type="submit" class="btn-dark">Search</button>
+  </form>
+
+  <div class="results mt-2"></div>
+</div>
+
+<script>
+  function getImages(upload, search) {
+    $.get(
+      "/api/search/?" +
+      $.param({
+        upload: upload,
+        search: search
+      }), function (images) {
+        $(".results").empty();
+        $(".results").append("<hr>");
+        let cardDeck = $("<div class='card-deck mb-5'>");
+        for (let i = 0; i < images.length; i++) {
+          let card = $("<div class='card'>");
+          let cardContent =
+            `
+        <a href="/images/${images[i].id}">
+        <img class="card-img-top img-fluid" src=${images[i].image}>
+        </a>
+         
+         <div class="card-body">
+            <h5 class="card-title">Seatch: $${images[i].search}</h5>
+            <p class="card-text">Added by ${images[i].searchName.split(" ")[0]}</p>
+            <a href="/images/${images[i].id}" class="btn btn-dark">
+            See Items
+            </a>
+          </div>
+          
+        `;
+          $(".results").append(cardDeck.append(card.html(cardContent)));
+        }
+        if (images.length === 0) {
+          $(".results").append("No results found with those parameters.");
+        }
+      }
+    );
+  }
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+    let $upload = $("#upload");
+    let $search = $("#search");
+    let searchUplaod = $upload.val();
+    let searchSearch = parseFloat($("#search").val());
+    if ($search.val() === "") {
+      searchSearch = 99999;
+      getImages(searchUpload, searchSearch);
+    } else if (isNaN(searchUpload) || searchSearch < 0) {
+      alert("Please enter a valid 'Search'.");
+    } else {
+      getImages(searchUpload, searchSearch);
+    }
+  });
+  $("a[href^='#']").on('click', function (e) {
+    // prevent default anchor click behavior
+    e.preventDefault();
+    // store hash
+    var hash = this.hash;
+    // animate
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 1000, function () {
+
+      // (default click behaviour)
+      window.location.hash = hash;
+    });
+  });
+</script>
+
+{{!-- The Footer Begins Here --}}
+<footer>
+  <div class="footer">
+    <div class="container text-center">
+      <ul class="menu">
+
+        <li>
+          <a href="/">PIX<span class="flip">R</span></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  </div>
+
+  <div class="container" style="border-top:1px solidg green;">
+    <div class="row text-center">
+      <div class="col-lg-12">
+        <ul class="menu">
+
+
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href=""/"">Top </a> </li> <li>
+              <a href="/auth/logout">LogOut</a>
+          </li>
+
+          <li>
+            <a href="/about">AboutUs</a>
+          </li>
+
+          <li>
+            <a href="link">Project-GitHub</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
