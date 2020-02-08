@@ -11,6 +11,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.3",
     "bcrypt-nodejs": "0.0.3",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
@@ -36,11 +37,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ColtonFalkner/ImageHost-WIP-.git"
+    "url": "git+https://github.com/ColtonFalkner/PIXR.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/ColtonFalkner/ImageHost-WIP-/issues"
+    "url": "https://github.com/ColtonFalkner/PIXR/issues"
   },
-  "homepage": "https://github.com/ColtonFalkner/ImageHost-WIP-#readme"
+  "homepage": "https://github.com/ColtonFalkner/PIXR#readme"
 }

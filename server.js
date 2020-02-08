@@ -1,10 +1,9 @@
-var env = require("dotenv").config();
+require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require("express-session");
 var db = require("./models");
-var env = require("dotenv");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -45,17 +44,17 @@ models.sequelize
 
 // Routes
 require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// require("./routes/htmlRoutes")(app);
 require("./routes/auth.js")(app, passport);
 
 //load passport strategies
-require("./config/passport/passport.js")(passport, models.user);
+require("./config/passport/passport.js")(passport, db.user);
 
 var syncOptions = { force: false };
 
-app.get("/", function(req, res) {
-  res.send("Welcome to Passport with Sequelize");
-});
+// app.get("/", function(req, res) {
+//   res.send("Welcome to Passport with Sequelize");
+// });
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
