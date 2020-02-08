@@ -4,9 +4,7 @@ var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require("express-session");
 var db = require("./models");
-// var env = require("dotenv")
-//   .load()
-//   .config();
+// var env = require("dotenv").load();
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -48,6 +46,7 @@ models.sequelize
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/auth.js")(app);
 
 var syncOptions = { force: false };
 
