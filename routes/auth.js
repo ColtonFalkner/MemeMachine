@@ -3,13 +3,15 @@ var db = require("../models");
 
 module.exports = function(app, passport) {
   function isLoggedIn(req, res, next) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
     if (req.isAuthenticated()) {
       return next();
     }
     res.redirect("/signin");
   }
   app.get("/signup", (req, res) => {
-    res.render("signup"); 
+    res.render("signup");
   });
   // app.get("/signup", authController.signup, function(req, res){
   //   res.render("signup");
@@ -20,7 +22,7 @@ module.exports = function(app, passport) {
   app.post(
     "/signin",
     passport.authenticate("local-signin", {
-      successRedirect: "/",
+      successRedirect: "/home",
       failureRedirect: "/signin"
     })
   );
@@ -32,7 +34,14 @@ module.exports = function(app, passport) {
       failureRedirect: "/signup"
     })
   );
+  app.get("/home", isLoggedIn, (req, res) => {
+    res.render("home");
+  });
   
+  app.get("/", (req, res) => {
+    res.render("index");
+  });
+
   app.get("/role", isLoggedIn, (req, res) => {
     res.render("role");
   });
@@ -41,7 +50,9 @@ module.exports = function(app, passport) {
     res.render("search");
   });
 
-  
+  app.get("/about", isLoggedIn, (req, res) => {
+    res.render("about");
+  });
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
   //     res.render("index", {
