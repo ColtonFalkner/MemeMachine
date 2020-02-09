@@ -31,7 +31,7 @@ module.exports = function(app) {
   // default options
 app.use(fileUpload());
 
-app.post('/upload', function(req, res) {
+app.post('/images', function(req, res) {
   let sampleFile;
   let uploadPath;
 
@@ -53,7 +53,7 @@ app.post('/upload', function(req, res) {
       return res.status(500).send(err);
     }
 
-    res.send('File uploaded to ' + uploadPath);
+    res.render("images");
   });
 });
 };
