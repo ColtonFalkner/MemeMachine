@@ -30,7 +30,6 @@ module.exports = function(app, passport) {
     "/signup",
     passport.authenticate("local-signup", {
       successRedirect: "/home",
-
       failureRedirect: "/signup"
     })
   );
