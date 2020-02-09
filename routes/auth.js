@@ -46,13 +46,17 @@ module.exports = function(app, passport) {
     res.render("role");
   });
 
-  app.get("/search", isLoggedIn, (req, res) => {
+  app.get("/search", (req, res) => {
     res.render("search");
   });
 
   app.get("/about", isLoggedIn, (req, res) => {
     res.render("about");
   });
+
+  app.get("/upload", isLoggedIn, (req, res) => {
+    res.render("upload");
+  })
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
   //     res.render("index", {

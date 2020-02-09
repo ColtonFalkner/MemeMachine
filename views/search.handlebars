@@ -47,11 +47,13 @@
 
 {{!-- The Start of the Form Container --}}
 <div class="container mb-5" id="form">
- <form>
-  <div class="form-group my-3">
-    <label for="exampleFormControlFile1">Upload Image</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
+ <form ref='uploadForm' 
+      id='uploadForm' 
+      action='/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type='submit' value='Upload!' />
 </form>
 </div>
 
@@ -103,7 +105,7 @@
       }
     );
   }
-  $("form").on("submit", function (event) {
+  /*$("form").on("submit", function (event) {
     event.preventDefault();
     let $upload = $("#upload");
     let $search = $("#search");
@@ -117,7 +119,7 @@
     } else {
       getImages(searchUpload, searchSearch);
     }
-  });
+  });*/
   $("a[href^='#']").on('click', function (e) {
     // prevent default anchor click behavior
     e.preventDefault();
