@@ -1,3 +1,27 @@
+PIXR
+
+Members:
+Colton Falkner
+Erin Taylor
+Jose Sanchez
+
+Project Description: A product taht lets you search and store and edit images
+
+Technologies:
+CSS, Handlebars, JavaScript, NodeJS, Express, MySQL, Sequelize, Passport
+
+
+
+
+
+
+
+
+
+
+
+
+
 Directions/Temporary till we write a readme
 # Project Requirements
 

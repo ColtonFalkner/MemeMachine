@@ -216,7 +216,28 @@ footer ul li a:hover {
   bottom: 350px;
 }
 
-
+/* 
+Index Page */
+.container {
+	text-align: center;
+	border: 1px solid white;
+}
+.container ul {
+	border: 2px solid white;
+	display: inline-block;
+	margin: 10px 0;
+	padding: 2px;
+}
+.container li {
+	display: inline-block;
+}
+.container li a {
+	display: inline-block;
+	background: #444;
+	color: #FFF;
+	padding: 5px;
+	text-decoration: none;
+}
 
 
 /* Sign-In Page */
