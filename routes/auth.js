@@ -1,5 +1,6 @@
 // var authController = require("../controllers/authcontroller.js");
 var db = require("../models");
+path = require('path');
 
 module.exports = function(app, passport) {
   function isLoggedIn(req, res, next) {
@@ -56,6 +57,21 @@ module.exports = function(app, passport) {
   app.get("/upload", isLoggedIn, (req, res) => {
     res.render("upload");
   })
+  app.get("/images", (req, res) => {
+  //  var dirname1 ="../"+ __dirname+"/images/"
+  //  img={}
+  //  fa-----
+   
+  // // console.log(dirname)
+  //   images = "image1.jpg"
+
+  //   img="<img src="+dirname1+images+">"
+  // "<img src='../../images/image1.jpg'>"
+    res.render("images")
+  })
+  
+  
+  
   // app.get("/", function(req, res) {
   //   db.Example.findAll({}).then(function(dbExamples) {
   //     res.render("index", {
