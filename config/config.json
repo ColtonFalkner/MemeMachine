@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Ilovealthea13!",
+    "password": "Madrid2019$",
     "database": "sequelize_passport",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Ilovealthea13!",
+    "password": "Madrid2019$",
     "database": "sequelize_passport",
     "host": "localhost",
     "dialect": "mysql",
