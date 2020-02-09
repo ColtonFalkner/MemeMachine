@@ -1,7 +1,7 @@
 {
-  "name": "handlebars-boilerplate",
+  "name": "PIXR",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "A fullstack image hosting and editing app.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
