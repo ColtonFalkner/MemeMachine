@@ -217,6 +217,8 @@ footer ul li a:hover {
 }
 
 
+
+
 /* Sign-In Page */
 
 #signin ul {
@@ -267,10 +269,12 @@ float: left;
   
 }
 
+
 @media screen and (min-width: 960px) {
   .scene {
     display: flex;
     justify-content: space-around;
   }
 }
+
 
