@@ -144,11 +144,8 @@ input:checked + .cardA {
   transform: rotateY(180deg);
 }
 
-@media screen and (min-width: 960px) {
-  .scene {
-    display: flex;
-    justify-content: space-around;
-  }
+#form  {
+text-align: center;
 }
 
 /* start of footer */
@@ -219,6 +216,7 @@ footer ul li a:hover {
   bottom: 350px;
 }
 
+
 /* Sign-In Page */
 
 #signin ul {
@@ -268,3 +266,11 @@ float: left;
   width: 100vw;
   
 }
+
+@media screen and (min-width: 960px) {
+  .scene {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
