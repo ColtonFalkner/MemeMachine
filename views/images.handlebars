@@ -1,72 +1,86 @@
 {{!-- Navbar --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-  {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
-  
-  <a class="navbar-brand" href="/">PIX<span class="flip">R</span></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    {{!-- <a class="navbar-brand" href="#">Navbar</a> --}}
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item hide-desktop">
-        <a class="nav-link" href="/images">My images</a>
-      </li>
-      <li class="nav-item hide-desktop">
-        <a class="nav-link" href="/auth/logout">Logout</a>
-      </li>
-      <li class="nav-item dropdown">
-        {{!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          {{user.gname}}
-        </a> --}}
-        {{!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/{{user.id}}/images">My Images</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/auth/logout">Logout</a>
-        </div> --}}
-      </li>
-    </ul>
-  </div>
+    <a class="navbar-brand" href="/">PIX<span class="flip">R</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item hide-desktop">
+                <a class="nav-link" href="/images">My images</a>
+            </li>
+            <li class="nav-item hide-desktop">
+                <a class="nav-link" href="/auth/logout">Logout</a>
+            </li>
+            <li class="nav-item dropdown">
+            </li>
+        </ul>
+    </div>
 </nav>
 
-
+<base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/wanaka-tree.jpg">
+<div id="carousel">
+    <figure id="spinner">
+        <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/11234019/Bulldog-standing-in-the-grass.jpg"alt>
+        <img src="still-lake.jpg" alt>
+        <img src="pink-milford-sound.jpg" alt>
+        <img src="paradise.jpg" alt>
+        <img src="morekai.jpg" alt>
+        <img src="milky-blue-lagoon.jpg" alt>
+        <img src="lake-tekapo.jpg" alt>
+        <img src="milford-sound.jpg" alt>
+    </figure>
+</div>
+<span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+<span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
 
 <footer>
-  <div class="footer-top">
-    <div class="container text-center">
-      <ul class="menu">
+    <div class="footer-top">
+        <div class="container text-center">
+            <ul class="menu">
 
-        <li>
-          <a href="/">PIX<span class="flip">R</span></a>
-        </li>
+                <li>
+                    <a href="/">PIX<span class="flip">R</span></a>
+                </li>
 
-      </ul>
+            </ul>
+        </div>
     </div>
-  </div>
-  </div>
-
-  <div class="container" style="border-top:1px solid grey;">
-    <div class="row text-center">
-      <div class="col-lg-12">
-        <ul class="menu">
-
-          <li>
-            <a href="/">Top </a>
-          </li>
-
-          <li>
-            <a href="/about">AboutUs</a>
-          </li>
-
-          <li>
-            <a href="https://github.com/ColtonFalkner/PIXR">Project-GitHub</a>
-          </li>
-
-        </ul>
-      </div>
     </div>
-  </div>
+
+    <div class="container" style="border-top:1px solid grey;">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="menu">
+
+                    <li>
+                        <a href="/">Top </a>
+                    </li>
+
+                    <li>
+                        <a href="/about">AboutUs</a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/ColtonFalkner/PIXR">Project-GitHub</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<script>
+    var angle = 0;
+    function galleryspin(sign) {
+        spinner = document.querySelector("#spinner");
+        if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+        spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+    }
+</script>
